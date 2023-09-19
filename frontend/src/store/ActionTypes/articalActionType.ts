@@ -1,0 +1,3 @@
+export const GET_ALL_ARTICALS = 'GET_ALL_ARTICALS';
+export const GET_MY_ARTICALS = 'GET_MY_ARTICALS';
+export const GET_ARTICAL = 'GET_ARTICAL';
