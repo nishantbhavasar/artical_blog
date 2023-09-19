@@ -18,8 +18,19 @@ app.use(cookieParser());
 app.use(express.urlencoded({extended:true}));
 app.use(express.json({ limit: "50mb" }));
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+    origin:"*"
+}));
 app.use('/api',router);
+
+//test route
+app.get('/', (req, res) => {
+   try {
+       res.status(200).json({ message: "Server Running successfully" });
+   } catch (error:any) {
+       res.send({ message: error.message });
+   } 
+});
 
 //db connection
 connectToDb()
