@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
-dotenv.config({path:`${process.env.NOTDE_ENV}.env`});
+dotenv.config();
+// dotenv.config({path:`${process.env.NOTDE_ENV || 'develop'}.env`});
 import express,{Application,Request,Response} from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
@@ -7,11 +8,11 @@ import cookieParser from 'cookie-parser';
 import { connectToDb } from './models';
 import router from './router';
 
-const app:Application = express();
+export const app:Application = express();
 
 // Checking the Environment File
-if(!process.env.NODE_ENV) throw new Error(`Please Provides the Environment ##########`)
-dotenv.config({path:`${process.env.NODE_ENV}.env`});
+// if(!process.env.NODE_ENV) throw new Error(`Please Provides the Environment ##########`)
+// dotenv.config({path:`${process.env.NODE_ENV}.env`});
 
 // Middleware
 app.use(cookieParser());
