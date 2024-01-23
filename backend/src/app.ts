@@ -41,4 +41,4 @@ const PORT = process.env.PORT;
 app.listen(PORT,()=>{
     // console.clear(); // uncomment if you want clear console whenever server restart
     console.log(`Server Running On Port ${PORT} or Environment ${process.env.NODE_ENV}`);
-});
+}); 
